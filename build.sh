@@ -1,5 +1,6 @@
+
 # clone siyuan
-git clone https://github.com/siyuan-note/siyuan.git
+./_get-src.sh
 cd siyuan
 
 # apply patch
