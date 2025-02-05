@@ -8,7 +8,7 @@ index e7d3a39ab..572cc3d90 100644
          ".cpp", ".go", ".rs", ".swift", ".kt", ".py", ".php", ".js", ".css", ".ts", ".sh", ".bat", ".cmd", ".ini", ".yaml",
 -        ".rst", ".adoc", ".textile", ".opml", ".org", ".wiki", ".epub"];
 +        ".rst", ".adoc", ".textile", ".opml", ".org", ".wiki", ".epub", ".kmind", ".drawio"];
-
+ 
      // protyle
      public static readonly SIYUAN_CONFIG_APPEARANCE_DARK_CODE: string[] = ["a11y-dark", "agate", "an-old-hope", "androidstudio",
 diff --git a/kernel/model/asset_content.go b/kernel/model/asset_content.go
@@ -16,11 +16,11 @@ index ab52f6a7a..efc10fdd4 100644
 --- a/kernel/model/asset_content.go
 +++ b/kernel/model/asset_content.go
 @@ -475,6 +475,8 @@ func NewAssetsSearcher() *AssetsSearcher {
-                        ".opml":     txtAssetParser,
-                        ".org":      txtAssetParser,
-                        ".wiki":     txtAssetParser,
-+                       ".kmind":     txtAssetParser,
-+                       ".drawio":     txtAssetParser,
-                        ".docx":     &DocxAssetParser{},
-                        ".pptx":     &PptxAssetParser{},
-                        ".xlsx":     &XlsxAssetParser{},
+ 			".opml":     txtAssetParser,
+ 			".org":      txtAssetParser,
+ 			".wiki":     txtAssetParser,
++			".kmind":     txtAssetParser,
++			".drawio":     txtAssetParser,
+ 			".docx":     &DocxAssetParser{},
+ 			".pptx":     &PptxAssetParser{},
+ 			".xlsx":     &XlsxAssetParser{},
