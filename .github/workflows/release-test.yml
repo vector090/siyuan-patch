@@ -1,0 +1,25 @@
+name: release-docker
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "release version/tag"
+        required: false
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      packages: write
+      contents: read
+
+    steps:
+      - name: test
+        run: |
+          echo ${{ env.DOCKER_HUB_USER }}
+        env:
+          DOCKER_HUB_USER: ${{ secrets.DOCKER_HUB_USER }}
+
