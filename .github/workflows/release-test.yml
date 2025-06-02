@@ -2,10 +2,10 @@ name: release-test
 
 on:
   workflow_dispatch:
-    inputs:
-      version:
-        description: "release version/tag"
-        required: false
+    # inputs:
+    #   version:
+    #     description: "release version/tag"
+    #     required: false
 
 jobs:
   build:
@@ -19,7 +19,8 @@ jobs:
     steps:
       - name: test
         run: |
-          echo ${{ env.DOCKER_HUB_USER }}
+          echo ${{ env.DOCKER_HUB_USER }} > /tmp/test.txt
+          cat /tmp/test.txt
         env:
           DOCKER_HUB_USER: ${{ secrets.DOCKER_HUB_USER }}
 
